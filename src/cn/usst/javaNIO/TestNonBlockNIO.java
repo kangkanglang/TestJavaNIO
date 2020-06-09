@@ -55,7 +55,7 @@ public class TestNonBlockNIO {
         ssChannel.register(selector, SelectionKey.OP_ACCEPT);
 
         //6.轮询式的获取选择器上已经“准备就绪”的事件
-        while(selector.select()>0){
+        while(selector.select()>0){ //访问内核是否有事件， >0 表示 有事件
 
             //7.获取当前选择器中所有注册的“选择键（已就绪的监听事件）”
             Iterator<SelectionKey> it=selector.selectedKeys().iterator();
